@@ -77,7 +77,7 @@ class Program
         Console.WriteLine($"5. feladat: A legrövidebb szakasz adatai:");
         Console.WriteLine($"        Kezdete: {legrovidebb.start_nev}");
         Console.WriteLine($"        Vége: {legrovidebb.stop_nev}");
-        Console.WriteLine($"        Távolság: {legrovidebb.hossz} km");
+        Console.WriteLine($"        Távolság: {legrovidebb.hossz/1000} km");
 
         //7. feladat: Hiányos Állomásnevek:
         var hianyos = 
@@ -107,6 +107,7 @@ class Program
             orderby sor.szakasz_magassag 
             select sor   
         ).Last();
+                
         Console.WriteLine($"8. feladat: A túra legmagassabban fekvő végpontja:");
         Console.WriteLine($"        A végpont neve: {magassagok.stop_nev}");
         Console.WriteLine($"        A végpont tengerszint feletti magassága: {magassagok.szakasz_magassag}");
@@ -127,7 +128,6 @@ class Program
             fw.WriteLine(res);
         }
         fw.Close();
-       
 
     } // --------------- Main vége -----------------------------------
 }
